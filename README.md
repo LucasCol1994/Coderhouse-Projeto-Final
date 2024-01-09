@@ -1,10 +1,10 @@
 # Coderhouse-Projeto-Final
 Este repositório tem como objetivo mostrar o projeto final exigido pela CoderHouse
 
-Objetivo:
+# Objetivo:
 O código tem como objetivo criar e manipular tabelas de um banco de dados SQLite, extrair dados da API PokeAPI, transformar e salvar esses dados em DataFrames, e finalmente, realizar merges entre esses DataFrames.
 
-Bibliotecas Utilizadas:
+# Bibliotecas Utilizadas:
 
 import pandas as pd
 import requests
@@ -13,33 +13,36 @@ from plyer import notification
 import sqlite3
 import ast
 
-Funções de Alerta:
+# Funções de Alerta:
 alert(nivel, base, etapa, erro=""): Exibe notificações de alerta com base no nível de gravidade, base de dados, etapa e mensagem de erro.
-Funções de Banco de Dados:
+
+# Funções de Banco de Dados:
 criar_tabelas(): Cria as tabelas do banco de dados SQLite.
 save_bd(df: pd.DataFrame, nome_tabela: str): Salva um DataFrame no banco de dados.
 load_bd(nome_tabela): Carrega um DataFrame do banco de dados.
-Funções de Extração da API:
+
+# Funções de Extração da API:
 get_json_api(url): Obtém dados da API e retorna em formato JSON.
 extract_and_save(url, table_name): Extrai dados da API, salva em um DataFrame e armazena no banco de dados.
 
-Etapa de Extração:
+# Etapa de Extração:
 etapa_extracao(): Executa a extração de dados da API para pokémons, habilidades, habitats e tipos.
-Funções de Criação de Bases Específicas:
+
+# Funções de Criação de Bases Específicas:
 create_pokemons_base(df_pokemons_url): Cria a base de dados para pokémons a partir das URLs fornecidas.
 create_habilidades_base(df_habilidades_url): Cria a base de dados para habilidades a partir das URLs fornecidas.
 create_habitats_base(df_habitat_url): Cria a base de dados para habitats a partir das URLs fornecidas.
 create_types_base(df_types_url): Cria a base de dados para tipos de pokémon a partir das URLs fornecidas.
 
-Etapa de Transformação:
+# Etapa de Transformação:
 transform_and_save_pokemons(df_pokemons_full): Realiza transformações na base de dados de pokémons e salva o resultado.
 transform_and_save_habilidades(df_habilidades_full): Realiza transformações na base de dados de habilidades e salva o resultado.
 transform_and_save_habitats(df_habitats_full): Realiza transformações na base de dados de habitats e salva o resultado.
 transform_and_save_type(df_types_full): Realiza transformações na base de dados de tipos de pokémon e salva o resultado.
-Merges:
+# Merges:
 df_merged: Realiza merges em etapas para habitat, habilidades e pokémons.
 
-Observações Importantes:
+# Observações Importantes:
     • Certificar-se de ter a biblioteca Plyer instalada para receber notificações.
     • Ajustar a lógica conforme necessário para atender a requisitos específicos.
     • O código assume que o banco de dados SQLite já está criado.
